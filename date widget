@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 8px;
+    background: transparent;
+    font-family: Georgia, serif;
+  }
+
+  .date {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 18px 10px;
+    text-align: center;
+    color: #a76d83;
+    background: #fff5f7;
+    border: 1px solid #efd5df;
+    border-radius: 16px;
+    font-size: 24px;
+  }
+</style>
+</head>
+<body>
+  <div class="date" id="today"></div>
+
+  <script>
+    function updateDate() {
+      const now = new Date();
+      document.getElementById("today").textContent =
+        "♡ " + now.toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric"
+        }) + " ♡";
+    }
+
+    updateDate();
+    setInterval(updateDate, 60000);
+  </script>
+</body>
+</html>
